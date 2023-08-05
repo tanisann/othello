@@ -25,8 +25,6 @@
 
     </style>
     <py-env>
-        - copy
-        - random
         - numpy
         - paths:
           - ./play_for_html.py
@@ -37,6 +35,8 @@
 <body>
     <py-script>
 from play_for_html import Othello
+import random
+import copy
 def show():
         for y in range(SQ):
             for x in range(SQ):
