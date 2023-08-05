@@ -80,11 +80,11 @@ def start_gote():
         
     </py-script>
       <h1>reversi</h1>
-      <button py-click="SQ_4()" class="py-button">4*4</button>
-      <button py-click="SQ_6()" class="py-button">6*6</button>
-      <button py-click="SQ_8()" class="py-button">8*8</button><br><br>
-      <button py-click="start_sente()" class="py-button">先手</button>
-      <button py-click="start_gote()" class="py-button">後手</button>
+      <button py-click="SQ_4()" id="SQ4" class="py-button">4*4</button>
+      <button py-click="SQ_6()" id="SQ6" class="py-button">6*6</button>
+      <button py-click="SQ_8()" id="SQ8" class="py-button">8*8</button><br><br>
+      <button py-click="start_sente()" id="sente" class="py-button">先手</button>
+      <button py-click="start_gote()" id="gote" class="py-button">後手</button>
       
       <p>4</p><div id="p4"></div>
       <div id ="board"><table><tr><td id="400"></td><td id="401"><span class="can_put"></span></td><td id="402"></td><td id="403"></td></tr><tr><td id="410"><span class="can_put"></span></td><td id="411"><span class="stone_white"></span></td><td id="412"><span class="stone_black"></span></td><td id="413"><tr><td id="420"></td><td id="421"><span class="stone_black"></span></td><td id="422"><span class="stone_white"></span></td><td id="423"><span class="can_put"></span><tr><td id="430"></td><td id="431"></td><td id="432"><span class="can_put"></span></td><td id="433"></tr></table></div>
