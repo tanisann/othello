@@ -1,0 +1,112 @@
+# othello
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset='UTF-8'>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <style type='text/css'>
+    div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
+
+    div#pagingbox { background: rgb(255, 255, 255); }
+    th { background: rgb(0, 128, 0); }
+
+    th, td { border: 1px solid; width: 100px; height: 100px; text-align: center; vertical-align: middle; }
+
+    table { border: 3px solid; border-collapse: collapse; white-space: nowrap; background: rgb(0, 128, 0); }
+
+    footer { position: fixed; width: 100%; background-color: rgb(192, 192, 192); padding: 15px 0px; bottom: 0px; }
+    
+    .can_put { display: inline-block; width: 100px; height: 100px; border-radius: 0%; vertical-align: middle; background: yellow; }
+
+    .stone_black { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: black; }
+
+    .stone_white { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: white; }
+
+    </style>
+    <py-env>
+        - paths:
+          - /play_for_html.py
+    </py-env>
+    <title>reversi</title>
+
+</head>
+<body>
+    <py-script>
+from play_for_html import Othello
+def show():
+        for y in range(SQ):
+            for x in range(SQ):
+                put_td = Element(f"{SQ}{x}{y}")
+                if othello.board[y][x] == 'black':
+                    put_td.element.innerHTML = "<span class="stone_black"></span>"
+                elif othello.board[y][x] == 'white':
+                    put_td.element.innerHTML = "<span class="stone_white"></span>"
+
+                if othello.placable_board[y][x]:
+                    put_td.element.innerHTML = "<span class="can_put"></span>"
+        
+def SQ_6():
+        global SQ
+        SQ = 6
+def SQ_8():
+        global SQ
+        SQ = 8
+def SQ_4():
+        global SQ
+        SQ = 4
+            
+def start_sente():
+        othello = Othello(SQ,3,1,record=True)
+        gn = Element(f"p{SQ}")
+        gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>
+        while not othello.is_end:
+            show()
+            othello.click(int(x),int(y))
+            show()
+                
+def start_gote():
+        othello = Othello(SQ,3,2,record=True)
+        gn = Element(f"p{SQ}")
+        gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>    
+        while not othello.is_end:
+            show()
+            othello.click(int(x),int(y))
+            show()
+        
+        
+    </py-script>
+      <h1>reversi</h1>
+      <button py-click="SQ_4()" class="py-button">4*4</button>
+      <button py-click="SQ_6()" class="py-button">6*6</button>
+      <button py-click="SQ_8()" class="py-button">8*8</button><br><br>
+      <button py-click="start_sente()" class="py-button">先手</button>
+      <button py-click="start_gote()" class="py-button">後手</button>
+      
+      <p>4</p><div id="p4"></div>
+      <div id ="board"><table><tr><td id="400"></td><td id="401"><span class="can_put"></span></td><td id="402"></td><td id="403"></td></tr><tr><td id="410"><span class="can_put"></span></td><td id="411"><span class="stone_white"></span></td><td id="412"><span class="stone_black"></span></td><td id="413"><tr><td id="420"></td><td id="421"><span class="stone_black"></span></td><td id="422"><span class="stone_white"></span></td><td id="423"><span class="can_put"></span><tr><td id="430"></td><td id="431"></td><td id="432"><span class="can_put"></span></td><td id="433"></tr></table></div>
+      
+      <p>6</p><div id="p6"></div>
+      <div id="board"><table><tr><td id="600"></td><td id="601"></td><td id="601"></td><td id="603"></td><td id="604"></td><td id="605"></tr><tr></td><td id="610"></td><td id="611"></td><td id="612"><span class="can_put"></span></td><td id="613"></td><td id="614"></td><td id="615"></tr><tr></td><td id="620"></td><td id="621"><span class="can_put"></span></td><td id="622"><span class="stone_white"></span></td><td id="623"><span class="stone_black"></span></td><td id="624"></td><td id="625"></tr><tr></td><td id="630"></td><td id="631"></td><td id="632"><span class="stone_black"></span></td><td id="633"><span class="stone_white"></span></td><td id="634"><span class="can_put"></span></td><td id="635"></tr><tr></td><td id="640"></td><td id="641"></td><td id="642"></td><td id="43"><span class="can_put"></span></td><td id="644"></td><td id="645"></tr><tr></td><td id="650"></td><td id="651"></td><td id="652"></td><td id="653"></td><td id="654"></td><td id="55"</td></tr></table></div>
+
+      <p>8</p><div id="p8"></div>
+     <div id="board"><table><tr><td id="800"></td><td id="801"></td><td id="802"></td><td id="803"></td><td id="804"></td><td id="805"></td><td id="806"></td><td id="807"></td></tr><tr><td id="810"></td><td id="811"></td><td id="812"></td><td id="813"></td><td id="814"></td><td id="815"></td><td id="816"></td><td id="817"></td></tr><tr><td id="820"></td><td id="821"></td><td id="822"></td><td id="823"><span class="can_put"></span></td><td id="824"></td><td id="825"></td><td id="826"></td><td id="827"></td></tr><tr><td id="830"></td><td id="831"></td><td id="832"><span class="can_put"></span></td><td id="833"><span class="stone_white"></span></td><td id="834"><span class="stone_black"></span></td><td id="835"></td><td id="836"></td><td id="837"></td></tr><tr><td id="840"></td><td id="841"></td><td id="842"></td><td id="843"><span class="stone_black"></span></td><td id="844"><span class="stone_white"></span></td><td id="845"><span class="can_put"></span></td><td id="846"></td><td id="847"></td></tr><tr><td id="850"></td><td id="951"></td><td id="852"></td><td id="853"></td><td id="854"><span class="can_put"></span></td><td id="855"></td><td id="856"></td><td id="857"></td></tr><tr><td id="860"></td><td id="861"></td><td id="862"></td><td id="863"></td><td id="864"></td><td id="865"></td><td id="866"></td><td id="867"></td></tr><tr><td id="870"></td><td id="871"></td><td id="872"></td><td id="873"></td><td id="874"></td><td id="875"></td><td id="876"></td><td id="877"></td></tr></table></div>
+
+
+      <hr>
+      <p>遊び方</p>
+      <p>1.4、6または8のボタンを押します</p>
+      <p> 2.先手または後手のボタンを押します</p>
+      <p>3.スタートします。もう一度遊ぶ場合も同様にします</p><br>
+      <p>※注意※</p>
+      <p>・プレイ中にボタンを押さないてください。バグります</p>
+      <p>・8は学習不足です(というか、ほとんどランダムです)</p>
+      <p>・棋譜を保存させていただきます</p>
+      <hr>
+      
+      <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
+
+      <p>コメント<br><input type='text' name='coment'></p>
+
+</body>
+</html>
