@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset='UTF-8'>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-    <style type='text/css'>
-    div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
+    <head>
+        <meta charset='UTF-8'>
+        <title>reversi</title>
+        <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <style type='text/css'>
+        div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
 
-    div#pagingbox { background: rgb(255, 255, 255); }
-    th { background: rgb(0, 128, 0); }
+        div#pagingbox { background: rgb(255, 255, 255); }
+        th { background: rgb(0, 128, 0); }
 
-    th, td { border: 1px solid; width: 100px; height: 100px; text-align: center; vertical-align: middle; }
+        th, td { border: 1px solid; width: 100px; height: 100px; text-align: center; vertical-align: middle; }
 
-    table { border: 3px solid; border-collapse: collapse; white-space: nowrap; background: rgb(0, 128, 0); }
+        table { border: 3px solid; border-collapse: collapse; white-space: nowrap; background: rgb(0, 128, 0); }
 
-    footer { position: fixed; width: 100%; background-color: rgb(192, 192, 192); padding: 15px 0px; bottom: 0px; }
+        footer { position: fixed; width: 100%; background-color: rgb(192, 192, 192); padding: 15px 0px; bottom: 0px; }
     
-    .can_put { display: inline-block; width: 100px; height: 100px; border-radius: 0%; vertical-align: middle; background: yellow; }
+        .can_put { display: inline-block; width: 100px; height: 100px; border-radius: 0%; vertical-align: middle; background: yellow; }
 
-    .stone_black { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: black; }
+        .stone_black { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: black; }
 
-    .stone_white { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: white; }
+        .stone_white { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: white; }
 
-    </style>
-    <py-env>
-        - numpy
-        - paths:
-          - ./play_for_html.py
+        </style>
+        <py-env>
+            - numpy
+            - paths:
+              - ./play_for_html.py
     </py-env>
-    <title>reversi</title>
+
 
 </head>
 <body>
