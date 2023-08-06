@@ -90,7 +90,7 @@
       def show():
         for y in range(SQ):
             for x in range(SQ):
-                put_td = Element(f"s{SQ}{x}{y}")
+                put_td = Element(f"s{SQ}{y}{x}")
                 if othello.board[y][x] == "black":
                     put_td.add_class("stone_black")
                 elif othello.board[y][x] == "white":
