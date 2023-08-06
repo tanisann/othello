@@ -67,6 +67,7 @@
 
     <py-script>
       from play_for_html import Othello
+      from pyscript import Element
       import numpy as np
       import random
       import copy
@@ -84,13 +85,13 @@
             for x in range(SQ):
                 put_td = Element(f"{SQ}{x}{y}")
                 if othello.board[y][x] == 'black':
-                    put_td.element.innerHTML = "<span class="stone_black"></span>"
+                    put_td.add_class("stone_black")
                 elif othello.board[y][x] == 'white':
-                    put_td.element.innerHTML = "<span class="stone_white"></span>"
+                    put_td.add_class("stone_white")
                 else:
-                    put_td.element.innerHTML = ""
+                    put_td.add_class("")
                 if othello.placable_board[y][x]:
-                    put_td.element.innerHTML = "<span class="can_put"></span>"
+                    put_td.add_class("can_put")
         
 
 
