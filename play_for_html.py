@@ -47,7 +47,7 @@ class Othello():
         self.initOthello()
         # イベントの設定
         if self.player == COM:
-            self.com_yomi(self.genom1)       
+            self.com_yomi()       
 
     def read(self,popu,gn):
             
@@ -325,7 +325,7 @@ class Othello():
         # 石を置く
         self.place(x, y, self.color[self.player],1)
 
-    def com_yomi(self,genom):
+    def com_yomi(self):
         now = self.player #打つ人=now
         
         placa = self.getPlacable(1)
@@ -398,20 +398,20 @@ class Othello():
                     waritesu = [wariai,tesuu]
                     
                     
-                    a = self.forward(lineu1,genom,0)
-                    b = self.forward(lineu2,genom,0)
-                    c = self.forward(lined1,genom,0)
-                    d = self.forward(lined2,genom,0)                    
-                    e = self.forward(liner1,genom,0)
-                    f = self.forward(liner2,genom,0)                    
-                    g = self.forward(linel1,genom,0)
-                    h = self.forward(linel2,genom,0)                    
-                    m = self.forward(ob1,genom,1)
-                    n = self.forward(ob2,genom,1)
-                    k = self.forward(ob3,genom,1)
-                    l = self.forward(ob4,genom,1)
+                    a = self.forward(lineu1,self.genom1,0)
+                    b = self.forward(lineu2,self.genom1,0)
+                    c = self.forward(lined1,self.genom1,0)
+                    d = self.forward(lined2,self.genom1,0)                    
+                    e = self.forward(liner1,self.genom1,0)
+                    f = self.forward(liner2,self.genom1,0)                    
+                    g = self.forward(linel1,self.genom1,0)
+                    h = self.forward(linel2,self.genom1,0)                    
+                    m = self.forward(ob1,self.genom1,1)
+                    n = self.forward(ob2,self.genom1,1)
+                    k = self.forward(ob3,self.genom1,1)
+                    l = self.forward(ob4,self.genom1,1)
                     
-                    p = self.forward(waritesu,genom,2)
+                    p = self.forward(waritesu,self.genom1,2)
                     
                     k_list[j] = (a+b+c+d+e+f+g+h)/2+m+n+k+l+p
                     self.save_board = copy.deepcopy(oita2)
