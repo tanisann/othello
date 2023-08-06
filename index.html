@@ -33,8 +33,6 @@
 </head>
 <body>
     <h1>reversi</h1>
-    <button py-click="get_now()" class="py-button">現在時刻を取得</button>
-    <div id="now"></div>
     <button py-click="SQ_4()" class="py-button">4*4</button>
     <button py-click="SQ_6()" class="py-button">6*6</button>
     <button py-click="SQ_8()" class="py-button">8*8</button><br><br>
@@ -68,23 +66,15 @@
 
 
     <py-script>
-      from datetime import datetime
-
-      def get_now():
-          now = datetime.now()
-          display(f"{now:%Y年%m月%d日 %H:%M:%S}", target="now")
       def SQ_4():
         global SQ
         SQ = 4
-        print(SQ)
       def SQ_6():
         global SQ
         SQ = 6
-        print(SQ)
       def SQ_8():
         global SQ
         SQ = 8
-        print(SQ)
         
 
     </py-script>
