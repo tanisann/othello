@@ -77,9 +77,11 @@
       def start_sente():
         global othello
         othello = Othello(SQ,3,1,record=True)
+        show()
       def start_gote():
         global othello
         othello = Othello(SQ,3,2,record=True)
+        show()
       def click(x,y):
         othello.click(int(x),int(y))
         show()
