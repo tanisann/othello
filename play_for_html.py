@@ -34,13 +34,17 @@ class Othello():
         self.win_COM = 0
         if init_player == YOU:
             self.player = YOU # 次に置く石の 
+            self.color = {#石の色を保持する辞書
+                YOU : "black",
+                COM : "white"
+                }  
         else:
             self.player = COM
-
-        self.color = {#石の色を保持する辞書
-                YOU : 1,
-                COM : -1
-                }     
+            self.color = {#石の色を保持する辞書
+                YOU : "white",
+                COM : "black"
+                }  
+   
 
 
         # オセロゲームの初期化
