@@ -33,7 +33,7 @@
 </head>
 <body>
     <h1>reversi</h1>
-    <button py-click="SQ_4()" class="py-button">4*4</button>
+    <button py-click="SQ_4(123)" class="py-button">4*4</button>
     <button py-click="SQ_6()" class="py-button">6*6</button>
     <button py-click="SQ_8()" class="py-button">8*8</button><br><br>
     <button py-click="start_sente()" id="sente" class="py-button">先手</button>
@@ -70,9 +70,10 @@
       import numpy as np
       import random
       import copy
-      def SQ_4():
+      def SQ_4(text):
         global SQ
         SQ = 4
+        print(text)
       def SQ_6():
         global SQ
         SQ = 6
