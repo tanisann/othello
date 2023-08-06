@@ -81,8 +81,10 @@
         global othello
         othello = Othello(SQ,3,2,record=True)
       def click(x,y):
+        print(x,y)
         othello.click(int(x),int(y))
         show()
+        print(x,y)
       def show():
         for y in range(SQ):
             for x in range(SQ):
