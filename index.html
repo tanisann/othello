@@ -88,17 +88,21 @@
         othello.com_yomi()
         show()
       def show():
+        board = othello.board
+        placable_board = othello.placable_board
+        print(board)
+        print(placable_board)
         for y in range(SQ):
             for x in range(SQ):
                 put_td = Element(f"s{SQ}{y}{x}")
-                if othello.board[y][x] == "black":
+                if board[y][x] == "black":
                     put_td.add_class("stone_black")
-                elif othello.board[y][x] == "white":
+                elif board[y][x] == "white":
                     put_td.add_class("stone_white")
                 else:
                     put_td.remove_class(["stone_white","stone_black"])
 
-                if othello.placable_board[y][x]:
+                if placable_board[y][x]:
                     put_td.add_class("can_put")
         
 
