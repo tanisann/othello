@@ -67,6 +67,9 @@
 
     <py-script>
       from play_for_html import Othello
+      import numpy as np
+      import random
+      import copy
       def SQ_4():
         global SQ
         SQ = 4
@@ -76,6 +79,10 @@
       def SQ_8():
         global SQ
         SQ = 8
+      def start_sente():
+        othello = Othello(SQ,3,1,record=True)
+      def start_gote():
+        othello = Othello(SQ,3,2,record=True)
         
 
     </py-script>
