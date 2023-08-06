@@ -91,9 +91,9 @@
         for y in range(SQ):
             for x in range(SQ):
                 put_td = Element(f"s{SQ}{x}{y}")
-                if othello.board[y][x] == 1:
+                if othello.board[y][x] == "black":
                     put_td.add_class("stone_black")
-                elif othello.board[y][x] == -1:
+                elif othello.board[y][x] == "white":
                     put_td.add_class("stone_white")
                 else:
                     put_td.remove_class(["stone_white","stone_black"])
