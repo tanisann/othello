@@ -5,11 +5,11 @@
         <title>reversi</title>
         <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
         <script defer src="https://pyscript.net/latest/pyscript.js"></script>
-        <py-env>
-            - numpy
-            - paths:
-              - ./play_for_html.py
-        </py-env>
+        <py-config>
+            packages = ["numpy"]
+            [[fetch]]
+            files = ["./play_for_html.py"]
+        </py-config>
         <style type='text/css'>
         div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
 
