@@ -5,6 +5,11 @@
         <title>reversi</title>
         <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
         <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+        <py-env>
+            - numpy
+            - paths:
+              - ./play_for_html.py
+        </py-env>
         <style type='text/css'>
         div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
 
@@ -24,12 +29,6 @@
         .stone_white { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: white; }
 
         </style>
-        <py-env>
-            - numpy
-            - paths:
-              - ./play_for_html.py
-    </py-env>
-
 
 </head>
 <body>
@@ -70,6 +69,7 @@
     def SQ_4():
         print("UVG")
     from play_for_html import Othello
+    import numpy as np
     import random
     import copy
 
