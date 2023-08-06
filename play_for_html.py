@@ -517,3 +517,5 @@ class Othello():
         g = open(f'record.txt', 'w')
         g.write('・'.join(map(str,new)))
         g.close()
+    def SQ_4(self):
+        display("ok")
