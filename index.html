@@ -67,48 +67,48 @@
 
 
     <py-script>
-        from play_for_html import Othello
-        import random
-        import copy
-        def show():
-                for y in range(SQ):
-                    for x in range(SQ):
-                        put_td = Element(f"{SQ}{x}{y}")
-                        if othello.board[y][x] == 'black':
-                            put_td.element.innerHTML = "<span class="stone_black"></span>"
-                        elif othello.board[y][x] == 'white':
-                            put_td.element.innerHTML = "<span class="stone_white"></span>"
+    from play_for_html import Othello
+    import random
+    import copy
+    def show():
+            for y in range(SQ):
+                for x in range(SQ):
+                    put_td = Element(f"{SQ}{x}{y}")
+                    if othello.board[y][x] == 'black':
+                        put_td.element.innerHTML = "<span class="stone_black"></span>"
+                    elif othello.board[y][x] == 'white':
+                        put_td.element.innerHTML = "<span class="stone_white"></span>"
 
-                        if othello.placable_board[y][x]:
-                            put_td.element.innerHTML = "<span class="can_put"></span>"
+                     if othello.placable_board[y][x]:
+                        put_td.element.innerHTML = "<span class="can_put"></span>"
         
-        def SQ_6():
-            global SQ
-            SQ = 6
-        def SQ_8():
-            global SQ
-            SQ = 8
-        def SQ_4():
-            global SQ
-            SQ = 4
+    def SQ_6():
+        global SQ
+        SQ = 6
+    def SQ_8():
+        global SQ
+        SQ = 8
+    def SQ_4():
+        global SQ
+        SQ = 4
             
-        def start_sente():
-            othello = Othello(SQ,3,1,record=True)
-            gn = Element(f"p{SQ}")
-            gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>
-            while not othello.is_end:
-                show()
-                othello.click(int(x),int(y))
-                show()
+     def start_sente():
+        othello = Othello(SQ,3,1,record=True)
+        gn = Element(f"p{SQ}")
+        gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>
+        while not othello.is_end:
+            show()
+            othello.click(int(x),int(y))
+            show()
                 
     def start_gote():
-            othello = Othello(SQ,3,2,record=True)
-            gn = Element(f"p{SQ}")
-            gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>    
-            while not othello.is_end:
-                show()
-                othello.click(int(x),int(y))
-                show()
+        othello = Othello(SQ,3,2,record=True)
+        gn = Element(f"p{SQ}")
+        gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>    
+        while not othello.is_end:
+            show()
+            othello.click(int(x),int(y))
+            show()
         
         
     </py-script>
