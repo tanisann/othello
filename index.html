@@ -88,9 +88,9 @@
         for y in range(SQ):
             for x in range(SQ):
                 put_td = Element(f"s{SQ}{x}{y}")
-                if othello.board[y][x] == 'black':
+                if othello.board[y][x] == 1:
                     put_td.add_class("stone_black")
-                elif othello.board[y][x] == 'white':
+                elif othello.board[y][x] == -1:
                     put_td.add_class("stone_white")
 
                 if othello.placable_board[y][x]:
