@@ -46,9 +46,7 @@ class Othello():
         # オセロゲームの初期化
         self.initOthello()
         # イベントの設定
-        if self.player == YOU:
-            self.click()
-        else:
+        if self.player == COM:
             self.com_yomi(self.genom1)       
 
     def read(self,popu,gn):
