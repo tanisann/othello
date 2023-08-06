@@ -33,7 +33,7 @@
 </head>
 <body>
     <h1>reversi</h1>
-    <button py-click="get_now()" class="py-button">現在時刻を取得</button>
+    <button py-click="SQ_4()" class="py-button">4*4</button>
     <button py-click="SQ_6()" class="py-button">6*6</button>
     <button py-click="SQ_8()" class="py-button">8*8</button><br><br>
     <button py-click="start_sente()" id="sente" class="py-button">先手</button>
@@ -66,11 +66,7 @@
 
 
     <py-script>
-    from datetime import datetime
-    
-    def get_now():
-        now = datetime.now()
-        display(f"{now:%Y年%m月%d日 %H:%M:%S}", target="now")
+    display("aaa")
     def SQ_4():
         display("UVG")
     from play_for_html import Othello
