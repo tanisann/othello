@@ -79,6 +79,18 @@
         othello = Othello(SQ,3,2,record=True)
       def click(x,y):
         print(x,y)
+      def show():
+        for y in range(SQ):
+            for x in range(SQ):
+                put_td = Element(f"{SQ}{x}{y}")
+                if othello.board[y][x] == 'black':
+                    put_td.element.innerHTML = "<span class="stone_black"></span>"
+                elif othello.board[y][x] == 'white':
+                    put_td.element.innerHTML = "<span class="stone_white"></span>"
+                else:
+                    put_td.element.innerHTML = ""
+                if othello.placable_board[y][x]:
+                    put_td.element.innerHTML = "<span class="can_put"></span>"
         
 
     </py-script>
