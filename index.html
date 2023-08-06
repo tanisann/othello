@@ -70,17 +70,20 @@
     from play_for_html import Othello
     import random
     import copy
-    def show():
-            for y in range(SQ):
-                for x in range(SQ):
-                    put_td = Element(f"{SQ}{x}{y}")
-                    if othello.board[y][x] == 'black':
-                        put_td.element.innerHTML = "<span class="stone_black"></span>"
-                    elif othello.board[y][x] == 'white':
-                        put_td.element.innerHTML = "<span class="stone_white"></span>"
 
-                     if othello.placable_board[y][x]:
-                        put_td.element.innerHTML = "<span class="can_put"></span>"
+    SQ = 6
+        
+    def show():
+        for y in range(SQ):
+            for x in range(SQ):
+                put_td = Element(f"{SQ}{x}{y}")
+                if othello.board[y][x] == 'black':
+                    put_td.element.innerHTML = "<span class="stone_black"></span>"
+                elif othello.board[y][x] == 'white':
+                    put_td.element.innerHTML = "<span class="stone_white"></span>"
+
+                if othello.placable_board[y][x]:
+                    put_td.element.innerHTML = "<span class="can_put"></span>"
         
     def SQ_6():
         global SQ
