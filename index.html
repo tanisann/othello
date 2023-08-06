@@ -69,9 +69,23 @@
 
     <py-script>
       from datetime import datetime
+
       def get_now():
           now = datetime.now()
           display(f"{now:%Y年%m月%d日 %H:%M:%S}", target="now")
+      def SQ_4():
+        global SQ
+        SQ = 4
+        print(SQ)
+      def SQ_6():
+        global SQ
+        SQ = 6
+        print(SQ)
+      def SQ_8():
+        global SQ
+        SQ = 8
+        print(SQ)
+        
 
     </py-script>
 </body>
