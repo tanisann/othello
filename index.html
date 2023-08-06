@@ -92,6 +92,8 @@
                     put_td.add_class("stone_black")
                 elif othello.board[y][x] == -1:
                     put_td.add_class("stone_white")
+                else:
+                    put_td.remove_class(["stone_white","stone_black"])
 
                 if othello.placable_board[y][x]:
                     put_td.add_class("can_put")
