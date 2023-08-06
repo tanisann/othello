@@ -7,8 +7,6 @@
         <script defer src="https://pyscript.net/latest/pyscript.js"></script>
         <py-config>
             packages = ["numpy"]
-            [[fetch]]
-            files = ["./play_for_html.py"]
         </py-config>
         <style type='text/css'>
         div#paging { text-align: center; position: fixed; bottom: 0px; right: 45%; }
@@ -69,54 +67,7 @@
       from datetime import datetime
       now = datetime.now()
       print(f"今は{now:%Y年%m月%d日 %H:%M:%S}です。")
-        def SQ_4():
-            display("UVG")
-        from play_for_html import Othello
-        import numpy as np
-        import random
-        import copy
 
-        SQ = 6
-        
-        def show():
-            for y in range(SQ):
-                for x in range(SQ):
-                    put_td = Element(f"{SQ}{x}{y}")
-                    if othello.board[y][x] == 'black':
-                        put_td.element.innerHTML = "<span class="stone_black"></span>"
-                    elif othello.board[y][x] == 'white':
-                        put_td.element.innerHTML = "<span class="stone_white"></span>"
-
-                    if othello.placable_board[y][x]:
-                        put_td.element.innerHTML = "<span class="can_put"></span>"
-        
-        def SQ_6():
-            global SQ
-            SQ = 6
-        def SQ_8():
-            global SQ
-            SQ = 8
-
-            
-         def start_sente():
-            othello = Othello(SQ,3,1,record=True)
-            gn = Element(f"p{SQ}")
-            gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>
-            while not othello.is_end:
-                show()
-                othello.click(int(x),int(y))
-                show()
-                
-        def start_gote():
-            othello = Othello(SQ,3,2,record=True)
-            gn = Element(f"p{SQ}")
-            gn.element.innerHTML = <p>f"genom:{othello.GN}"</p>    
-            while not othello.is_end:
-                show()
-                othello.click(int(x),int(y))
-                show()
-        
-        
     </py-script>
 </body>
 </html>
