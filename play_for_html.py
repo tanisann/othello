@@ -206,9 +206,7 @@ class Othello():
             if not self.player:
                  # 次に石が置けるプレイヤーがいない場合はゲーム終了
                 self.showResult()
-            else:
-                if self.player == COM:
-                    self.com_yomi(self.genom1)
+
             # 次に石がおける位置を取得して表示
             placable = self.getPlacable(board)
             self.showPlacable(placable)
