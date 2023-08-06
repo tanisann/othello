@@ -75,8 +75,10 @@
         global SQ
         SQ = sq
       def start_sente():
+        global othello
         othello = Othello(SQ,3,1,record=True)
       def start_gote():
+        global othello
         othello = Othello(SQ,3,2,record=True)
       def click(x,y):
         othello.click(int(x),int(y))
