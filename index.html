@@ -96,8 +96,10 @@
             for x in range(SQ):
                 put_td = Element(f"s{SQ}{y}{x}")
                 if board[y][x] == "black":
+                    put_td.remove_class("stone_white")
                     put_td.add_class("stone_black")
                 elif board[y][x] == "white":
+                    put_td.remove_class("stone_black")
                     put_td.add_class("stone_white")
                 elif board[y][x] == 0:
                     put_td.remove_class(["stone_white","stone_black"])
