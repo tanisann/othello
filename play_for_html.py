@@ -112,10 +112,10 @@ class Othello():
         self.placable_board = [[False] * self.sq for _ in range(self.sq)]
         
         # 計算した描画位置に石（円）を描画
-        self.board[self.sq//2][self.sq//2] =self.color[YOU]
-        self.board[self.sq//2-1][self.sq//2-1] = self.color[YOU]
-        self.board[self.sq//2][self.sq//2-1] = self.color[COM]
-        self.board[self.sq//2-1][self.sq//2] = self.color[COM]
+        self.board[self.sq//2][self.sq//2] =self.color[COM]
+        self.board[self.sq//2-1][self.sq//2-1] = self.color[COM]
+        self.board[self.sq//2][self.sq//2-1] = self.color[YOU]
+        self.board[self.sq//2-1][self.sq//2] = self.color[YOU]
         
         placable = self.getPlacable(1)
         self.showPlacable(placable)      
