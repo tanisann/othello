@@ -97,7 +97,6 @@
         for y in range(SQ):
             for x in range(SQ):
                 put_td = Element(f"s{SQ}{y}{x}")
-                print(put_td.element)
                 if board[y][x] == "black":
                     if "stone_white" in put_td.element.classList:
                         put_td.remove_class("stone_white")
