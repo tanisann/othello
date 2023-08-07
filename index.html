@@ -60,7 +60,9 @@
       
     <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
 
-    <p>コメント<br><input id="coment" type='text' name='coment'></p>
+    <p>コメント</p><br>
+    <input id="coment" type='text' name='coment'>
+    <button py-click="coment_keep()" class="py-button">保存</button>
 
 
     <py-script>
@@ -114,8 +116,10 @@
                     put_td.add_class("can_put")
                 else:
                     put_td.remove_class("can_put")
-      coment = document.getElementById('coment')
-      print(coment)
+      
+      def coment_keep():
+          coment = document.getElementById('coment')
+          print(coment)
         
 
 
