@@ -219,7 +219,6 @@ class Othello():
  
 
     def reverse(self, x, y,board):
-        print('reverse')
         '''(x,y)に石が置かれた時に裏返す必要のある石を裏返す'''
         if board == 1:
             place_board = self.board
