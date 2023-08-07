@@ -120,8 +120,14 @@
       
       def coment_keep():
           coment = document.getElementById("coment").value
-          print(coment)
-        
+          f = open(f"coment.txt","r",encoding='utf_8')
+          pre = f.read()
+          new = pre.split('・')
+          new.append(coment)
+          f.close()
+          g = open(f'coment.txt', 'w')
+          g.write('・'.join(map(str,coment)))
+          g.close()
 
 
     </py-script>
