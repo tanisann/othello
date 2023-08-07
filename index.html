@@ -60,7 +60,7 @@
       
     <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
 
-    <p>コメント<br><input type='text' name='coment'></p>
+    <p>コメント<br><input id="coment" type='text' name='coment'></p>
 
 
     <py-script>
@@ -114,6 +114,8 @@
                     put_td.add_class("can_put")
                 else:
                     put_td.remove_class("can_put")
+      coment = document.getElementById('coment')
+      print(coment)
         
 
 
