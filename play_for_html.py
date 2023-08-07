@@ -227,7 +227,7 @@ class Othello():
          #1:self.board 2:self.save_board
 
         now = self.player
-        if self.player == YOU:
+        if self.player ==YOU:
             other = COM
         else:
             other = YOU
