@@ -224,17 +224,17 @@ class Othello():
             place_board = self.board
         elif board == 2:
             place_board = self.save_board
-         #1:self.board 2:self.save_board       
+         #1:self.board 2:self.save_board
+
+        now = self.player
+        if self.payer == YOU:
+            other = COM
+        else:
+            other = YOU
     
         if place_board[y][x] != 0:
             # (x,y)にすでに石が置かれている場合は何もしない
             return
-        if self.player == COM:
-            other_color = 1
-            now_color = -1
-        else:
-            other_color = -1
-            now_color = 1
 
         for j in range(-1, 2):
             for i in range(-1, 2):
@@ -246,7 +246,7 @@ class Othello():
                     continue
 
                 # 隣が相手の色でなければその方向で裏返せる石はない
-                if place_board[y + j][x + i] != other_color:
+                if place_board[y + j][x + i] != self.color[other]:
                     continue
 
                 # 置こうとしているマスから遠い方向へ１マスずつ確認
@@ -260,11 +260,11 @@ class Othello():
                             break
 
                         # その方向に自分の色の石があれば石が裏返せる
-                        if place_board[y + j * s][x + i * s] == now_color:
+                        if place_board[y + j * s][x + i * s] == self.color[now]:
                             for n in range(1, s):
 
                                 # 盤面の石の管理リストを石を裏返した状態に更新
-                                place_board[y + j * n][x + i * n] *= -1
+                                place_board[y + j * n][x + i * n] = self.color[other]
                             
                             break
     def showPlacable(self,placable):
@@ -318,7 +318,7 @@ class Othello():
             
     def click(self,x,y):
         if self.checkPlacable(x, y, 1):
-            self.place(x, y, self.color[self.player],1)
+            self.place(x, y, self.color[YOU],1)
 
     def com_random(self):
         placable = self.getPlacable(1)
