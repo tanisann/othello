@@ -99,7 +99,7 @@
                     put_td.add_class("stone_black")
                 elif board[y][x] == "white":
                     put_td.add_class("stone_white")
-                else:
+                elif board[y][x] == 0:
                     put_td.remove_class(["stone_white","stone_black"])
 
                 if placable_board[y][x]:
