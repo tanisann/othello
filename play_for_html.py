@@ -195,6 +195,7 @@ class Othello():
 
         if board == 1:
             self.board[y][x] = color
+            print(self.board)
             if self.record:
                 self.game_log_txt += f'{X[x]}{Y[y]}'
             self.save()
