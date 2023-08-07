@@ -83,14 +83,16 @@
       
       def start_gote():
         global othello
-        othello = Othello(SQ,3,2)
-        show()
+        if not othello.is_end:
+            othello.com_yomi()
+            show()
         
       def click(y,x):
         othello.click(int(x),int(y))
         show()
-        othello.com_yomi()
-        show()
+        if not othello.is_end:
+            othello.com_yomi()
+            show()
         
       def show():
         board = othello.board
