@@ -219,6 +219,7 @@ class Othello():
  
 
     def reverse(self, x, y,board):
+        print('reverse')
         '''(x,y)に石が置かれた時に裏返す必要のある石を裏返す'''
         if board == 1:
             place_board = self.board
@@ -265,6 +266,7 @@ class Othello():
 
                                 # 盤面の石の管理リストを石を裏返した状態に更新
                                 place_board[y + j * n][x + i * n] = self.color[other]
+                                print("ok")
                             
                             break
     def showPlacable(self,placable):
