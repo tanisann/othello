@@ -204,16 +204,19 @@ class Othello():
         
         # 次に石を置くプレイヤーを決める
         if board == 1:
+            before_player = self.player
             self.nextPlayer()
                 # 前と同じプレイヤーであればスキップされたことになるのでそれを表示
+            if before_player==self.player and self.player==COM:
+                self.com_yomi()
 
-            if not self.player:
+            elif not self.player:
                  # 次に石が置けるプレイヤーがいない場合はゲーム終了
                 self.showResult()
-
-            # 次に石がおける位置を取得して表示
-            placable = self.getPlacable(board)
-            self.showPlacable(placable)
+            if self.player != None:
+                # 次に石がおける位置を取得して表示
+                placable = self.getPlacable(board)
+                self.showPlacable(placable)
                
 
  
