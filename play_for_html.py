@@ -265,10 +265,10 @@ class Othello():
                             for n in range(1, s):
 
                                 # 盤面の石の管理リストを石を裏返した状態に更新
-                                place_board[y + j * n][x + i * n] = self.color[other]
-                                print("ok")
+                                place_board[y + j * n][x + i * n] = self.color[now]
                             
                             break
+
     def showPlacable(self,placable):
         for y in range(self.sq):
             for x in range(self.sq):
