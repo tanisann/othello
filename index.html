@@ -118,21 +118,7 @@
                 else:
                     put_td.remove_class("can_put")
         
-      def coment_keep():
-          try:
-            options = {
-                    "startIn": "documents",
-                    "suggestedName": "coment.txt"
-                }
-            fileHandle = await window.showSaveFilePicker(Object.fromEntries(to_js(options)))
-          except Exception as e:
-            console.log('Exception: ' + str(e))
-            return
 
-          coment = document.getElementById("coment").value
-	      file = await fileHandle.createWritable()
-	      await file.write(coment)
-	      await file.close()
 
 
     </py-script>
