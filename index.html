@@ -61,8 +61,8 @@
 
     <p>コメント</p><br>
     <textarea id="coment" py-click="coment_keep()" rows="10" cols="80">コメント</textarea>
-    <button  type="button" id="file_save">Write Local File</button>
-
+    <button  type="button" id="file_save" py-click="coment_save()">保存</button>
+    <button  type="button" id="file_open" py-click="coment_open()">表示</button>
 
     <py-script output="output">
       from play_for_html import Othello
@@ -121,10 +121,14 @@
                 else:
                     put_td.remove_class("can_put")
 
-      def coment_keep():
+      def coment_save():
         coment = document.getElementById("coment").value
         with open("coment.txt","w") as f:
           f.write(coment)
+
+      def coment_open():
+        with open("coment.txt","r") as f:
+          print(f.read())
 
 
     </py-script>
