@@ -60,7 +60,7 @@
     <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
 
     <p>コメント</p><br>
-    <textarea id="content" name="content" rows="10" cols="80">コメント</textarea>
+    <textarea id="coment" py-click="coment_keep()" rows="10" cols="80">コメント</textarea>
     <button  type="button" id="file_save">Write Local File</button>
 
 
@@ -116,7 +116,10 @@
                     put_td.add_class("can_put")
                 else:
                     put_td.remove_class("can_put")
-
+    　def coment_keep():
+        coment = document.getElementById("coment").value
+        with open("coment.txt","w") as f:
+            f.write(coment)
 
 
     </py-script>
