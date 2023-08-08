@@ -63,7 +63,6 @@
     <p>コメント</p><br>
     <input id="coment" type='text' name='coment'>
     <button py-click="coment_keep()" class="py-button">保存</button>
-    <button py-click="coment_open()" class="py-button">road</button>
 
 
     <py-script>
@@ -73,6 +72,11 @@
       import numpy as np
       import random
       import copy
+      
+      import asyncio
+      import sys
+      from js import alert, document, Object, window
+      from pyodide import create_proxy, to_js
       
       def SQ_setting(sq):
         global SQ
@@ -118,15 +122,23 @@
                     put_td.add_class("can_put")
                 else:
                     put_td.remove_class("can_put")
-      
-      def coment_keep():
-          coment = document.getElementById("coment").value
-          with open("coment.txt", "w") as f:
-            f.write(coment)
         
-      def coment_open():
-          with open("coment.txt", "r") as f:
-            print(f.read()) 
+      async def coment_keep(event):
+      def coment_keep():
+          try:
+            options = {
+                    "startIn": "documents",
+                    "suggestedName": "coment.txt"
+                }
+            fileHandle = await window.showSaveFilePicker(Object.fromEntries(to_js(options)))
+          except Exception as e:
+            console.log('Exception: ' + str(e))
+            return
+
+          coment = document.getElementById("coment").value
+	      file = await fileHandle.createWritable()
+	      await file.write(coment)
+	      await file.close()
 
 
     </py-script>
