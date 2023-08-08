@@ -61,17 +61,22 @@
     <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
 
     <p>コメント</p><br>
-    <input id="coment" type='text' name='coment'>
-    <button py-click="coment_keep()" class="py-button">保存</button>
+    <textarea id="content" name="content" rows="10" cols="80">コメント</textarea>
+    <button class="button" type="button" id="file_save">Write Local File</button>
 
 
-    <py-script>
+    <py-script output="output">
       from play_for_html import Othello
       from pyscript import Element
       from js import document
       import numpy as np
       import random
       import copy
+
+      import asyncio
+      import sys
+      from js import alert, document, Object, window
+      from pyodide import create_proxy, to_js
       
       def SQ_setting(sq):
         global SQ
@@ -117,8 +122,31 @@
                     put_td.add_class("can_put")
                 else:
                     put_td.remove_class("can_put")
-        
 
+      async def file_save(event):
+	      try:
+		      options = {
+			      "startIn": "documents",
+			      "suggestedName": "coment.txt"
+		      }
+
+		      fileHandle = await window.showSaveFilePicker(Object.fromEntries(to_js(options)))
+	      except Exception as e:
+		      console.log('Exception: ' + str(e))
+		      return
+
+	      content = document.getElementById("content").value
+
+	      file = await fileHandle.createWritable()
+	      await file.write(content)
+	      await file.close()
+	      return
+
+      def setup_button():
+	      file_save_proxy = create_proxy(file_save)
+	      document.getElementById("file_save").addEventListener("click", file_save_proxy, False)
+
+      setup_button()
 
 
     </py-script>
