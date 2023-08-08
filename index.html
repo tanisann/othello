@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset='UTF-8'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>reversi</title>
         <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
         <script defer src="https://pyscript.net/latest/pyscript.js"></script>
@@ -82,12 +80,6 @@
       import numpy as np
       import random
       import copy
-
-      import asyncio
-      import sys
-      from js import alert, document, Object, window
-      #from pyodide import create_proxy, to_js
-      from pyodide.ffi import create_proxy
       
       def SQ_setting(sq):
         global SQ
@@ -134,30 +126,10 @@
                 else:
                     put_td.remove_class("can_put")
 
-      async def file_save(event):
-	      try:
-		      options = {
-			      "startIn": "documents",
-			      "suggestedName": "coment.txt"
-		      }
-
-		      fileHandle = await window.showSaveFilePicker(Object.fromEntries(to_js(options)))
-	      except Exception as e:
-		      console.log('Exception: ' + str(e))
-		      return
-
-	      content = document.getElementById("content").value
-
-	      file = await fileHandle.createWritable()
-	      await file.write(content)
-	      await file.close()
-	      return
-
-      def setup_button():
-	      file_save_proxy = create_proxy(file_save)
-	      document.getElementById("file_save").addEventListener("click", file_save_proxy, False)
-
-      setup_button()
+      def coment_keep():
+	    coment = document.getElementById("coment").value
+	    with open("coment.txt","w") as f:
+	    	f.write('Hello PyScript World')
 
 
     </py-script>
