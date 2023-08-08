@@ -63,6 +63,7 @@
     <p>コメント</p><br>
     <input id="coment" type='text' name='coment'>
     <button py-click="coment_keep()" class="py-button">保存</button>
+    <button py-click="coment_open()" class="py-button">road</button>
 
 
     <py-script>
@@ -122,12 +123,13 @@
           coment = document.getElementById("coment").value
           with open("coment.txt", "w") as f:
             f.write('coment')
+        
+      def coment_road():
+          with open("coment.txt", "r") as f:
+            print(f.read()) 
 
 
     </py-script>
-    <script>
-      <form method="post" action="./sample.cgi">
-      書き込む文字列：<input type="text" name="wData"><br>
-    </script>
+
 </body>
 </html>
