@@ -27,16 +27,6 @@
         .stone_black { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: black; }
 
         .stone_white { display: inline-block; width: 80px; height: 80px; border-radius: 50%; vertical-align: middle; background: white; }
-        .button {
-          background-color: #4CAF50; /* Green */
-          border: none;
-          color: white;
-          padding: 5px 22px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-        }
         </style>
 
 </head>
@@ -71,7 +61,7 @@
 
     <p>コメント</p><br>
     <textarea id="content" name="content" rows="10" cols="80">コメント</textarea>
-    <button class="button" type="button" id="file_save">Write Local File</button>
+    <button  type="button" id="file_save">Write Local File</button>
 
 
     <py-script output="output">
@@ -127,10 +117,9 @@
                     put_td.remove_class("can_put")
 
       def coment_keep():
-	    coment = document.getElementById("coment").value
-	    with open("coment.txt","w") as f:
-	    	f.write('Hello PyScript World')
-
+	coment = document.getElementById("coment").value
+	with open("coment.txt","w") as f:
+	    f.write(coment)
 
     </py-script>
 
