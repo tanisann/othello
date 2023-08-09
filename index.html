@@ -54,10 +54,9 @@
     <p>※注意※</p>
     <p>・プレイ中にボタンを押さないてください。バグります</p>
     <p>・8は学習不足です(というか、ほとんどランダムです)</p>
-    <p>・棋譜を保存させていただきます</p>
     <hr>
       
-    <p>感想・バグ報告等ございましたら、ぜひコメントしてください</p>
+    <p>感想・バグ報告等ございましたら、ぜひコメントしてください(コメント機能は今後実装予定)</p>
 
     <p>コメント</p><br>
     <textarea id="coment" rows="10" cols="80">コメント</textarea>
@@ -96,7 +95,7 @@
         if not othello.is_end:
             othello.com_yomi()
             show()
-            if othelo.is_end:
+            if othello.is_end:
               result = othello.kazoeru(1)
               genom_p = Element(f"p{SQ}")
               genom_p.element.innerHTML = f"YOU:{result[1]}COM:{result[2]}"
