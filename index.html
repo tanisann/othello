@@ -91,16 +91,15 @@
         show()
         
       def click(y,x):
-        if othello.player == 2:
-            othello.click(int(x),int(y))
+        othello.click(int(x),int(y))
+        show()
+        if not othello.is_end:
+            othello.com_yomi()
             show()
-            if not othello.is_end:
-                othello.com_yomi()
-                show()
-            else:
-                result = othello.kazoeru(1)
-                genom_p = Element(f"p{SQ}")
-                genom_p.element.innerHTML = f"YOU:{result[1]}COM:{result[2]}"
+        else:
+            result = othello.kazoeru(1)
+            genom_p = Element(f"p{SQ}")
+            genom_p.element.innerHTML = f"YOU:{result[1]}COM:{result[2]}"
         
         
       def show():
