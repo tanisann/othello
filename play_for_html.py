@@ -26,7 +26,7 @@ class Othello():
             POPULATION = 20
         else:
             POPULATION = 10
-        self.GN = 1
+        self.GN = random.randint(0,POPULATION-1)
         self.genom1= self.read(POPULATION,self.GN)
         self.is_end = False
 
