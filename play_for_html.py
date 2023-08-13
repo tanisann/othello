@@ -324,7 +324,6 @@ class Othello():
             self.game_log()
             
     def click(self,x,y):
-        print(111)
         if self.click_YOU:
             if self.checkPlacable(x, y, 1):
                 self.place(x, y, self.color[YOU],1)
