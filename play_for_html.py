@@ -12,7 +12,6 @@ Y = ('1','2','3','4','5','6','7','8')
 class Othello():
     def __init__(self,sq,hiddenn,init_player,record=False):
         '''コンストラクタ'''
-        print(1)
         self.HIDDENLAYER = [(sq//2)*hiddenn,(sq//2)*hiddenn,2*hiddenn]
         self.hiddenn = hiddenn
         
@@ -325,6 +324,7 @@ class Othello():
             self.game_log()
             
     def click(self,x,y):
+        print(111)
         if self.click_YOU:
             if self.checkPlacable(x, y, 1):
                 self.place(x, y, self.color[YOU],1)
