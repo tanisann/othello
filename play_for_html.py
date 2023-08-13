@@ -33,13 +33,15 @@ class Othello():
         self.win_YOU = 0
         self.win_COM = 0
         if init_player == YOU:
-            self.player = YOU # 次に置く石の 
+            self.player = YOU # 次に置く石の
+            self.click_YOU = True
             self.color = {#石の色を保持する辞書
                 YOU : "black",
                 COM : "white"
                 }  
         else:
             self.player = COM
+            self.click_YOU = False
             self.color = {#石の色を保持する辞書
                 YOU : "white",
                 COM : "black"
@@ -217,6 +219,7 @@ class Othello():
                 # 次に石がおける位置を取得して表示
                 placable = self.getPlacable(board)
                 self.showPlacable(placable)
+                self.click_YOU = True
                
 
  
@@ -321,9 +324,10 @@ class Othello():
             self.game_log()
             
     def click(self,x,y):
-        if self.player == YOU:
+        if self.click_YOU:
             if self.checkPlacable(x, y, 1):
                 self.place(x, y, self.color[YOU],1)
+                self.click_YOU = False
 
     def com_random(self):
         placable = self.getPlacable(1)
