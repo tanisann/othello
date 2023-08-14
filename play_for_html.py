@@ -332,16 +332,7 @@ class Othello():
 
             else:
                 print("not")
-        """     
-
-    def com_random(self):
-        placable = self.getPlacable(1)
-
-        # 最初のマスを次に石を置くマスとする
-        x, y = placable[random.randint(0,len(placable)-1)]
-
-        # 石を置く
-        self.place(x, y, self.color[self.player],1)
+        """
 
     def com_yomi(self):
         now = self.player #打つ人=now
