@@ -323,6 +323,7 @@ class Othello():
             self.game_log()
             
     def click(self,x,y):
+        """
         if self.player==YOU and self.pl_ok:
             if self.checkPlacable(x, y, 1):
                 self.pl_ok = False
@@ -330,7 +331,7 @@ class Othello():
 
             else:
                 print("not")
-                
+        """     
 
     def com_random(self):
         placable = self.getPlacable(1)
