@@ -323,16 +323,10 @@ class Othello():
             self.game_log()
             
     def click(self,x,y):
-        pass
-        """
         if self.player==YOU and self.pl_ok:
             if self.checkPlacable(x, y, 1):
                 self.pl_ok = False
                 self.place(x, y, self.color[YOU],1)
-
-            else:
-                print("not")
-        """
 
     def com_yomi(self):
         now = self.player #打つ人=now
